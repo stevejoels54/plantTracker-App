@@ -13,9 +13,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { isEmpty } from "lodash";
 import appActions from "../stateConfig/actions/actions";
+import config from "../config";
 
 const NotificationsScreen = () => {
-  const deviceID = 1;
+  const deviceID = config.DEVICE_ID;
   const [refreshing, setRefreshing] = useState(false);
   const dispatch = useDispatch();
   const notifications = useSelector((state) => state.getNotificationsSuccess);

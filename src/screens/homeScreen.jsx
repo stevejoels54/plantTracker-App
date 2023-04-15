@@ -19,9 +19,10 @@ import { isEmpty } from "lodash";
 import appActions from "../stateConfig/actions/actions";
 import moment from "moment";
 import { checkCondition } from "../helpers/commentHelper";
+import config from "../config";
 
 const HomeScreen = ({ navigation }) => {
-  const deviceID = 1;
+  const deviceID = config.DEVICE_ID;
   const currentTime = moment().format("HH:mm:ss");
 
   const [refreshing, setRefreshing] = useState(false);

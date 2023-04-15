@@ -7,12 +7,12 @@ import {
   Linking,
 } from "react-native";
 import Entypo from "react-native-vector-icons/Entypo";
+import config from "../config";
 
 const ExportData = () => {
-  const device_id = 1;
   // Function to handle export button press
   const handleExport = () => {
-    const url = `https://stevejoels.pythonanywhere.com/export/${device_id}`;
+    const url = `${config.SERVER_URL}/export/${config.DEVICE_ID}`;
     // You can use Linking to open the URL in the default browser of the device
     Linking.openURL(url);
   };

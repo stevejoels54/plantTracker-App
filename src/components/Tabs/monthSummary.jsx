@@ -15,9 +15,10 @@ import { useState } from "react";
 import { isEmpty } from "lodash";
 import appActions from "../../stateConfig/actions/actions";
 import noData from "../../../assets/pics/noData.png";
+import config from "../../config";
 
 const MonthSummary = () => {
-  const deviceID = 1;
+  const deviceID = config.DEVICE_ID;
   const [refreshing, setRefreshing] = useState(false);
   const dispatch = useDispatch();
   const summary = useSelector((state) => state.getSummarySuccess);

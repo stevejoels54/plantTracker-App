@@ -28,3 +28,9 @@ web-build/
 # build files
 build/
 eas.json
+
+# config files
+app.config.js
+app.config.json
+config.json
+config.js

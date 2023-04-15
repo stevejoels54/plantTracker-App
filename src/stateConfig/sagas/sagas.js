@@ -1,11 +1,12 @@
 import { takeLatest, fork, put } from "redux-saga/effects";
 import axios from "axios";
 import appActions from "../actions/actions";
+import config from "../../config";
 
 function* getCurrentReading({ device_id }) {
   try {
     const response = yield axios.get(
-      `https://stevejoels.pythonanywhere.com/current_reading/${device_id}`
+      `${config.SERVER_URL}/current_reading/${device_id}`
     );
     yield put({
       type: appActions.GET_CURRENT_READING_SUCCESS,
@@ -23,7 +24,7 @@ function* watchGetCurrentReading() {
 function* getSummary({ device_id }) {
   try {
     const response = yield axios.get(
-      `https://stevejoels.pythonanywhere.com/summary/${device_id}`
+      `${config.SERVER_URL}/summary/${device_id}`
     );
     yield put({
       type: appActions.GET_SUMMARY_SUCCESS,
@@ -41,7 +42,7 @@ function* watchGetSummary() {
 function* getNotifications({ device_id }) {
   try {
     const response = yield axios.get(
-      `https://stevejoels.pythonanywhere.com/notifications_by_device/${device_id}`
+      `${config.SERVER_URL}/notifications_by_device/${device_id}`
     );
     yield put({
       type: appActions.GET_NOTIFICATIONS_SUCCESS,

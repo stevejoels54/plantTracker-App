@@ -11,15 +11,16 @@ import {
 import ExportData from "../components/exportData";
 import Icon from "react-native-vector-icons/FontAwesome"; // Import the FontAwesome icon library
 import logo from "../../assets/pics/logo.png";
+import config from "../config";
 
 const SettingsScreen = () => {
   const currentYear = new Date().getFullYear(); // Get current year
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const device_id = "1";
+  const device_id = config.DEVICE_ID;
 
   // Function to handle "View More" button press
   const handleViewMore = () => {
-    const url = `https://stevejoels.pythonanywhere.com/device_data/${device_id}`;
+    const url = `${config.SERVER_URL}/device_data/${device_id}`;
     // You can use Linking to open the URL in the default browser of the device
     Linking.openURL(url);
   };
